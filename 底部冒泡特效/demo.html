@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>底部冒泡特效</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      min-height: 600px;
+      width: 100%;
+    }
+    .demo-bg {
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+      width: 100%;
+      min-width: 500px;
+      background: linear-gradient(to bottom, #00f3ff, #00ffa5)
+    }
+    .demo-wrapper {
+      position: absolute;
+      display: flex;
+      justify-content: space-around;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0;
+      padding: 0;
+      font-size: 0px;
+      list-style-type: none;
+    }
+    .demo-wrapper .demo-item {
+      position: relative;
+      /* display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #fff;
+      transform: rotate(45deg);
+      animation: demo 2s linear infinite; */
+    }
+    .demo-wrapper .demo-item .demo-item-pop {
+      /* content: ''; */
+      display: inline-block;
+      position: absolute;
+      bottom: 0;
+      opacity: 0;
+      width: 10px;
+      height: 10px;
+      /* font-size: 0px; */
+      border: 2px solid #fff;
+      transform: rotate(45deg);
+      animation: demo 3s linear infinite;
+    }
+    .demo-wrapper .demo-item .demo-item-pop:nth-child(1){
+      animation: demo 3s .75s linear infinite;
+    }
+    .demo-wrapper .demo-item .demo-item-pop:nth-child(2){
+      animation: demo 3s 1.5s linear infinite;
+    }
+    .demo-wrapper .demo-item .demo-item-pop:nth-child(3){
+      animation: demo 3s 2.25s linear infinite;
+    }
+    .demo-wrapper .demo-item .demo-item-pop:nth-child(4){
+      animation: demo 3s 3s linear infinite;
+    }
+    @keyframes demo {
+      0% {
+        width: 10px;
+        height: 10px;
+        bottom: 0px;
+        transform: rotate(45deg);
+        opacity: 1;
+      }
+      /* 25% {
+        width: 20px;
+        height: 20px;
+        bottom: 80px;
+        transform: rotate(135deg);
+        opacity: 0.75;
+      }
+      50% {
+        width: 30px;
+        height: 30px;
+        bottom: 160px;
+        transform: rotate(225deg);
+        opacity: 0.5;
+      }
+      75% {
+        width: 40px;
+        height: 40px;
+        bottom: 240px;
+        transform: rotate(315deg);
+        opacity: 0.25;
+      } */
+      100% {
+        width: 50px;
+        height: 50px;
+        bottom: 400px;
+        transform: rotate(405deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-bg">
+    <ul class="demo-wrapper">
+      <!-- <li class="demo-item">
+        <div class="demo-item-pop"></div>
+        <div class="demo-item-pop"></div>
+        <div class="demo-item-pop"></div>
+        <div class="demo-item-pop"></div>
+      </li>
+      <li class="demo-item">
+        <div class="demo-item-pop"></div>
+        <div class="demo-item-pop"></div>
+        <div class="demo-item-pop"></div>
+        <div class="demo-item-pop"></div>
+      </li>
+      <li class="demo-item">
+        <div class="demo-item-pop"></div>
+        <div class="demo-item-pop"></div>
+        <div class="demo-item-pop"></div>
+        <div class="demo-item-pop"></div>
+      </li> -->
+    </ul>
+  </div>
+  <script>
+    let TIMEER = null
+    // 页面加载完成后执行
+    window.onload = function () {
+      // 获取挂载点dom
+      let demo = document.getElementsByClassName('demo-wrapper')[0]
+      // 获取当前浏览器窗口的宽高
+      let w = document.body.scrollWidth
+      let h = document.body.scrollHeight
+      // 计算泡泡的列数
+      let popNum = Math.floor(w / 150)
+      for (let i = 0; i < popNum; i++) {
+        createPop(demo)
+      }
+      // console.log(popNum)
+    }
+    /*
+    * @param domObj 需要挂载的位置
+    */
+    function createPop (domObj) {
+      let newPopParent = document.createElement('li')
+      newPopParent.setAttribute('class', 'demo-item')
+      for (let i = 0; i < 4; i++) {
+        let newPop = document.createElement('div')
+        newPop.setAttribute('class', 'demo-item-pop')
+        newPopParent.appendChild(newPop)
+      }
+      domObj.appendChild(newPopParent)
+    }
+    // 页面大小改变触发
+    window.onresize = function () {
+      let demo = document.getElementsByClassName('demo-wrapper')[0]
+      // 清空当前所有泡泡
+      demo.innerHTML = ''
+      if (TIMEER) {
+        clearTimeout(TIMEER)
+      }
+      TIMEER = setTimeout(() => {
+        let w = document.body.scrollWidth
+        let popNum = Math.floor(w / 150)
+        for (let i = 0; i < popNum; i++) {
+          createPop(demo)
+        }
+      }, 100)
+    }
+  </script>
+</body>
+</html>

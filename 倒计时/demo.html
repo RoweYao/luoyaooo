@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>倒计时</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      min-height: 600px;
+      width: 100%;
+      background-color: #000;
+    }
+    .demo {
+      display: flex;
+      position: relative;
+      top: 50%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: -200px;
+      width: 500px;
+      height: 210px;
+      /* background: red; */
+    }
+    .demo .number-wrapper {
+      display: flex;
+      width: 240px;
+      height: 210px;
+      /* background: green; */
+    }
+    .demo .colon-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 20px;
+      height: 210px;
+    }
+    .colon-wrapper .colon-item {
+      height: 20px;
+      width: 20px;
+      background: greenyellow;
+      border-radius: 10px;
+    }
+    .number-wrapper .number {
+      position: relative;
+      width: 120px;
+      height: 210px;
+      /* background: #fff; */
+    }
+    .number .number-item {
+      position: absolute;
+      /* width: 100px;
+      height: 20px; */
+      opacity: .1;
+      background: greenyellow;
+      border-radius: 5px;
+      transition: opacity .2s;
+    }
+    .number-item:nth-child(1) {
+      top: 10px;
+      left: 20px;
+      right: 20px;
+      height: 10px;
+    }
+    .number-item:nth-child(2) {
+      top: 20px;
+      right: 10px;
+      width: 10px;
+      height: 80px;
+    }
+    .number-item:nth-child(3) {
+      bottom: 20px;
+      right: 10px;
+      width: 10px;
+      height: 80px;
+    }
+    .number-item:nth-child(4) {
+      bottom: 10px;
+      right: 20px;
+      left: 20px;
+      height: 10px;
+    }
+    .number-item:nth-child(5) {
+      bottom: 20px;
+      left: 10px;
+      width: 10px;
+      height: 80px;
+    }
+    .number-item:nth-child(6) {
+      top: 20px;
+      left: 10px;
+      width: 10px;
+      height: 80px;
+    }
+    .number-item:nth-child(7) {
+      top: 100px;
+      right: 20px;
+      left: 20px;
+      height: 10px;
+    }
+    /* .number-item.on {
+      opacity: 1;
+      transition: opacity .2s;
+    } */
+    /* X 初始化数字 */
+    .number[data-value = 'x'] .number-item:nth-child(1),
+    .number[data-value = 'x'] .number-item:nth-child(2),
+    .number[data-value = 'x'] .number-item:nth-child(3),
+    .number[data-value = 'x'] .number-item:nth-child(4),
+    .number[data-value = 'x'] .number-item:nth-child(5),
+    .number[data-value = 'x'] .number-item:nth-child(6),
+    .number[data-value = 'x'] .number-item:nth-child(7){
+      opacity: .1;
+    }
+    /* 0 */
+    .number[data-value = '0'] .number-item:nth-child(1){
+      transition-delay: .1s;
+      opacity: 1;
+    }
+    .number[data-value = '0'] .number-item:nth-child(2){
+      transition-delay: .12s;
+      opacity: 1;
+    }
+    .number[data-value = '0'] .number-item:nth-child(3){
+      transition-delay: .14s;
+      opacity: 1;
+    }
+    .number[data-value = '0'] .number-item:nth-child(4){
+      transition-delay: .16s;
+      opacity: 1;
+    }
+    .number[data-value = '0'] .number-item:nth-child(5){
+      transition-delay: .18s;
+      opacity: 1;
+    }
+    .number[data-value = '0'] .number-item:nth-child(6){
+      transition-delay: .2s;
+      opacity: 1;
+    }
+    /* 1 */
+    .number[data-value = '1'] .number-item:nth-child(2){
+      transition-delay: .1s;
+      opacity: 1;
+    }
+    .number[data-value = '1'] .number-item:nth-child(3){
+      transition-delay: .12s;
+      opacity: 1;
+    }
+    /* 2 */
+    .number[data-value = '2'] .number-item:nth-child(1){
+      transition-delay: .1s;
+      opacity: 1;
+    }
+    .number[data-value = '2'] .number-item:nth-child(2){
+      transition-delay: .12s;
+      opacity: 1;
+    }
+    .number[data-value = '2'] .number-item:nth-child(4){
+      transition-delay: .14s;
+      opacity: 1;
+    }
+    .number[data-value = '2'] .number-item:nth-child(5){
+      transition-delay: .12s;
+      opacity: 1;
+    }
+    .number[data-value = '2'] .number-item:nth-child(7){
+      transition-delay: .16s;
+      opacity: 1;
+    }
+    /* 3 */
+    .number[data-value = '3'] .number-item:nth-child(1){
+      transition-delay: .1s;
+      opacity: 1;
+    }
+    .number[data-value = '3'] .number-item:nth-child(2){
+      transition-delay: .12s;
+      opacity: 1;
+    }
+    .number[data-value = '3'] .number-item:nth-child(3){
+      transition-delay: .14s;
+      opacity: 1;
+    }
+    .number[data-value = '3'] .number-item:nth-child(4){
+      transition-delay: .16s;
+      opacity: 1;
+    }
+    .number[data-value = '3'] .number-item:nth-child(7){
+      transition-delay: .14s;
+      opacity: 1;
+    }
+    /* 4 */
+    .number[data-value = '4'] .number-item:nth-child(2){
+      transition-delay: .1s;
+      opacity: 1;
+    }
+    .number[data-value = '4'] .number-item:nth-child(3){
+      transition-delay: .12s;
+      opacity: 1;
+    }
+    .number[data-value = '4'] .number-item:nth-child(6){
+      transition-delay: .11s;
+      opacity: 1;
+    }
+    .number[data-value = '4'] .number-item:nth-child(7){
+      transition-delay: .12s;
+      opacity: 1;
+    }
+    /* 5 */
+    .number[data-value = '5'] .number-item:nth-child(1){
+      transition-delay: .1s;
+      opacity: 1;
+    }
+    .number[data-value = '5'] .number-item:nth-child(6){
+      transition-delay: .12s;
+      opacity: 1;
+    }
+    .number[data-value = '5'] .number-item:nth-child(7){
+      transition-delay: .14s;
+      opacity: 1;
+    }
+    .number[data-value = '5'] .number-item:nth-child(3){
+      transition-delay: .16s;
+      opacity: 1;
+    }
+    .number[data-value = '5'] .number-item:nth-child(4){
+      transition-delay: .18s;
+      opacity: 1;
+    }
+    /* 6 */
+    .number[data-value = '6'] .number-item:nth-child(1){
+      transition-delay: .1s;
+      opacity: 1;
+    }
+    .number[data-value = '6'] .number-item:nth-child(6){
+      transition-delay: .12s;
+      opacity: 1;
+    }
+    .number[data-value = '6'] .number-item:nth-child(5){
+      transition-delay: .14s;
+      opacity: 1;
+    }
+    .number[data-value = '6'] .number-item:nth-child(4){
+      transition-delay: .16s;
+      opacity: 1;
+    }
+    .number[data-value = '6'] .number-item:nth-child(3){
+      transition-delay: .18s;
+      opacity: 1;
+    }
+    .number[data-value = '6'] .number-item:nth-child(7){
+      transition-delay: .2s;
+      opacity: 1;
+    }
+    /* 7 */
+    .number[data-value = '7'] .number-item:nth-child(1){
+      transition-delay: .1s;
+      opacity: 1;
+    }
+    .number[data-value = '7'] .number-item:nth-child(2){
+      transition-delay: .12s;
+      opacity: 1;
+    }
+    .number[data-value = '7'] .number-item:nth-child(3){
+      transition-delay: .14s;
+      opacity: 1;
+    }
+    /* 8 */
+    .number[data-value = '8'] .number-item:nth-child(1){
+      transition-delay: .1s;
+      opacity: 1;
+    }
+    .number[data-value = '8'] .number-item:nth-child(2){
+      transition-delay: .12s;
+      opacity: 1;
+    }
+    .number[data-value = '8'] .number-item:nth-child(3){
+      transition-delay: .14s;
+      opacity: 1;
+    }
+    .number[data-value = '8'] .number-item:nth-child(4){
+      transition-delay: .16s;
+      opacity: 1;
+    }
+    .number[data-value = '8'] .number-item:nth-child(5){
+      transition-delay: .18s;
+      opacity: 1;
+    }
+    .number[data-value = '8'] .number-item:nth-child(6){
+      transition-delay: .2s;
+      opacity: 1;
+    }
+    .number[data-value = '8'] .number-item:nth-child(7){
+      transition-delay: .2s;
+      opacity: 1;
+    }
+    /* 9 */
+    .number[data-value = '9'] .number-item:nth-child(7){
+      transition-delay: .1s;
+      opacity: 1;
+    }
+    .number[data-value = '9'] .number-item:nth-child(6){
+      transition-delay: .12s;
+      opacity: 1;
+    }
+    .number[data-value = '9'] .number-item:nth-child(1){
+      transition-delay: .14s;
+      opacity: 1;
+    }
+    .number[data-value = '9'] .number-item:nth-child(2){
+      transition-delay: .16s;
+      opacity: 1;
+    }
+    .number[data-value = '9'] .number-item:nth-child(3){
+      transition-delay: .18s;
+      opacity: 1;
+    }
+    .number[data-value = '9'] .number-item:nth-child(4){
+      transition-delay: .2s;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="demo">
+    <div class="minute-wrapper number-wrapper">
+      <div class="number minute" data-value="0">
+        <div class="number-item"></div>
+        <div class="number-item"></div>
+        <div class="number-item"></div>
+        <div class="number-item"></div>
+        <div class="number-item"></div>
+        <div class="number-item"></div>
+        <div class="number-item"></div>
+      </div>
+      <div class="number minute" data-value="0">
+        <div class="number-item"></div>
+        <div class="number-item"></div>
+        <div class="number-item"></div>
+        <div class="number-item"></div>
+        <div class="number-item"></div>
+        <div class="number-item"></div>
+        <div class="number-item"></div>
+      </div>
+    </div>
+    <div class="colon-wrapper">
+      <div class="colon-item"></div>
+      <div class="colon-item"></div>
+    </div>
+    <div class="second-wrapper number-wrapper">
+      <div class="number second" data-value="0">
+        <div class="number-item"></div>
+        <div class="number-item"></div>
+        <div class="number-item"></div>
+        <div class="number-item"></div>
+        <div class="number-item"></div>
+        <div class="number-item"></div>
+        <div class="number-item"></div>
+      </div>
+      <div class="number second" data-value="0">
+        <div class="number-item"></div>
+        <div class="number-item"></div>
+        <div class="number-item"></div>
+        <div class="number-item"></div>
+        <div class="number-item"></div>
+        <div class="number-item"></div>
+        <div class="number-item"></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    let TimeList = {
+      mFirst: 0,
+      mLast: 0,
+      sFirst: 0,
+      sLast: 0
+    }
+    // 页面加载完成后执行
+    window.onload = function () {
+      let time = 3600000
+      beginCount(time)
+    }
+    // 计算剩余时间 返回 object
+    function restTime (time) {
+      let ts = parseInt(time / 1000)
+      let mFirst = parseInt(ts / 60 / 10)
+      let mLast = parseInt(ts / 60 - (mFirst * 10))
+      let sFirst = parseInt(ts % 60 / 10)
+      let sLast = parseInt(ts % 60 - (sFirst * 10))
+      return {
+        mFirst,
+        mLast,
+        sFirst,
+        sLast
+      }
+    }
+    // 开始倒计时
+    function beginCount (time) {
+      showCount(restTime(time))
+      let t = time
+      let timer = setInterval(() => {
+        // console.log(t)
+        t = t - 1000
+        if (t < 0) {
+          clearInterval(timer)
+        } else {
+          if (t <= 10000) {
+            let numbers = document.getElementsByClassName('number-item')
+            let colons = document.getElementsByClassName('colon-item')
+            // console.log(numbers[0])
+            Array.from(numbers).forEach(n => {
+              n.style.background = 'red'
+            })
+            Array.from(colons).forEach(c => {
+              c.style.background = 'red'
+            })
+          }
+          showCount(restTime(t))
+        }
+      }, 1000)
+    }
+    // 展示页面倒计时
+    function showCount (obj) {
+      let numbers = document.getElementsByClassName('number')
+      if (TimeList.mFirst !== obj.mFirst) {
+        TimeList.mFirst = obj.mFirst
+        numbers[0].setAttribute('data-value', 'x')
+      }
+      if (TimeList.mLast !== obj.mLast) {
+        TimeList.mLast = obj.mLast
+        numbers[1].setAttribute('data-value', 'x')
+      }
+      if (TimeList.sFirst !== obj.sFirst) {
+        TimeList.sFirst = obj.sFirst
+        numbers[2].setAttribute('data-value', 'x')
+      }
+      if (TimeList.sLast !== obj.sLast) {
+        TimeList.sLast = obj.sLast
+        numbers[3].setAttribute('data-value', 'x')
+      }
+      // TimeList.mFirst !== obj.mFirst && numbers[0].setAttribute('data-value', 'x')
+      // TimeList.mLast !== obj.mLast && numbers[1].setAttribute('data-value', 'x')
+      // TimeList.sFirst !== obj.sFirst && numbers[2].setAttribute('data-value', 'x')
+      // TimeList.sLast !== obj.sLast && numbers[3].setAttribute('data-value', 'x')
+      setTimeout(() => {
+        numbers[0].setAttribute('data-value', obj.mFirst)
+        numbers[1].setAttribute('data-value', obj.mLast)
+        numbers[2].setAttribute('data-value', obj.sFirst)
+        numbers[3].setAttribute('data-value', obj.sLast)
+      }, 200)
+    }
+  </script>
+</body>
+</html>
