@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>这是一个登录页</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100vw;
+      background-image: url('https://iknow-pic.cdn.bcebos.com/38dbb6fd5266d0161bdb610e962bd40734fa35d1');
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .login-form {
+      display: flex;
+      padding: 40px;
+      z-index: 100;
+      position: relative;
+      overflow: hidden;
+      flex-direction: column;
+      /* justify-content: center; */
+      width: 240px;
+      height: 220px;
+      background: inherit;
+      border-radius: 18px;
+      text-align: center;
+    }
+    .login-form::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      height: calc(100% + 20px);
+      width: calc(100% + 20px);
+      background: inherit;
+      box-shadow: inset 0 0 0 200px rgba(255, 255, 255, .25);
+      filter: blur(6px);
+      z-index: -1;
+      overflow: hidden;
+    }
+    .login-form h2 {
+      font-size: 18px;
+      font-weight: 400;
+      color: #3d5256;
+    }
+    .login-form input, .login-form button {
+      /* display: block; */
+      margin: 6px 0;
+      padding: 0 14px;
+      height: 36px;
+      line-height: 36px;
+      border-radius: 4px;
+      outline: none;
+      border: none;
+      color: #3d5256;
+      background-color: rgba(255, 255, 255, .3)
+    }
+    .login-form input::placeholder {
+      color: rgb(61, 82, 86, .5)
+    }
+    .login-form button {
+      margin-top: 24px;
+      background-color: rgba(103, 132, 41, 0.58);
+      color: #fff;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      transition: .4s;
+    }
+    .login-form button:hover{
+      background-color: rgba(103, 132, 41);
+    }
+    .login-form button::before, .login-form button::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100px;
+      height: 100%;
+      background-color:rgba(235, 241, 223, 0.58);
+      transform: skewX(-20deg);
+      filter: blur(30px);
+      transform: translateX(-120px);
+      overflow: hidden;
+    }
+    .login-form button::after {
+      width: 40px;
+      left: 60px;
+      background-color:rgba(235, 241, 223, 1);
+    }
+    .login-form button:hover::after, .login-form button:hover::before {
+      transition: 1s;
+      transform: translateX(300px);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <form action="#" class="login-form">
+      <h2>登录</h2>
+      <input
+        type="text"
+        name="username"
+        class="login-username"
+        placeholder="用户名"
+      >
+      <input
+        type="password"
+        name="password"
+        class="login-password"
+        placeholder="密码"
+      >
+      <button class="login-submit">登录</button>
+    </form>
+  </div>
+</body>
+
+</html>
