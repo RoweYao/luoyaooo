@@ -1,0 +1,126 @@
+body, html {
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  height: 100vh;
+  width: 100vw;
+}
+
+.slider-wrapper {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.slider-wrapper .slide-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 0;
+  transition: all linear 0.8s;
+}
+
+.slider-wrapper .slide-item .image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  z-index: 100;
+}
+
+.slider-wrapper .slide-item .content {
+  position: absolute;
+  padding: 40px;
+  bottom: 0;
+  width: calc(50% - 80px);
+  color: #fff;
+  background-color: rgba(0, 0, 0, .4);
+}
+
+.slider-wrapper .slide-item .content h2 {
+  font-size: 24px;
+}
+
+.slider-wrapper .slide-item .content .description {
+  font-size: 18px;
+}
+
+
+#prev, #next {
+  position: absolute;
+  bottom: calc(50% - 30px);
+  height: 60px;
+  width: 60px;
+  font-size: 48px;
+  line-height: 53px;
+  text-align: center;
+  color: rgba(255, 255, 255, .3);
+  background-color: rgba(0, 0, 0, .7);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all .2s;
+  z-index: 150;
+}
+
+#prev {
+  left: 20px;
+}
+
+#next {
+  right: 20px;
+}
+
+#prev:hover, #next:hover {
+  color: rgba(0, 0, 0, .3);
+  background-color: rgba(255, 255, 255, .3);
+}
+
+.slider-wrapper .slide-item {
+  opacity: 0;
+}
+
+.slider-wrapper .slide-item.current {
+  opacity: 1;
+}
+
+.slider-wrapper .slide-item .content {
+  opacity: 0;
+  transform: translate(-100%, 100%)
+}
+.slider-wrapper .slide-item.current .image {
+  opacity: 1;
+  /* transition: all 1s ease-in-out; */
+}
+
+.slider-wrapper .slide-item.current .content {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: all 1s ease-in-out .4s;
+}
+
+@media screen and (max-width: 960px) {
+  .slider-wrapper .slide-item .content {
+    width: calc(100% - 80px);
+  }
+
+  #prev, #next {
+    position: absolute;
+    bottom: calc(50% - 20px);
+    height: 50px;
+    width: 50px;
+    font-size: 36px;
+    line-height: 46px;
+    text-align: center;
+    color: rgba(255, 255, 255, .3);
+    background-color: rgba(0, 0, 0, .7);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all .2s;
+    z-index: 150;
+  }
+}

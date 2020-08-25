@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hover发光特效</title>
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_2024951_2ifqj28rakg.css">
+  <style>
+    body, html {
+      padding: 0;
+      margin: 0;
+    }
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100vw;
+      background: #405061;
+      position: relative;
+      z-index: 100; /* 用于展示光圈 */
+    }
+    ul, li {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    main ul {
+      display: flex;
+    }
+    main li {
+      margin: 0 10px;
+    }
+    li a {
+      display: block;
+      position: relative;
+      width: 60px;
+      height: 60px;
+      line-height: 60px;
+      text-align: center;
+      background: #405061;
+      text-decoration: none;
+      color: #000;
+      border-radius: 50%;
+      transition: .6s;
+    }
+    li a:hover {
+      text-shadow: 0 0 14px rgb(255, 255, 255);
+    }
+    li a::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgb(255, 255, 255);
+      border-radius: 50%;
+      transition: .6s;
+      transform: scale(.8);
+      z-index: -1;
+    }
+    li a:hover::before {
+      box-shadow: 0 0 14px 2px rgb(255, 255, 255);
+      transform: scale(1.05);
+    }
+    .iconfont {
+      font-size: 30px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <ul>
+      <li><a href="#"><i class="iconfont icon-weixin"></i></a></li>
+      <li><a href="#"><i class="iconfont icon-bilibili"></i></a></i></li>
+      <li><a href="#"><i class="iconfont icon-weibo"></i></a></li>
+      <li><a href="#"><i class="iconfont icon-github"></i></a></li>
+      <li><a href="#"><i class="iconfont icon-qq"></i></a></li>
+    </ul>
+  </main>
+</body>
+</html>
