@@ -107,6 +107,16 @@ main {
   .slider-wrapper .slide-item .content {
     width: calc(100% - 80px);
   }
+  /* 将动画改为从底部滑入 */
+  .slider-wrapper .slide-item .content {
+    opacity: 0;
+    transform: translateY(100%)
+  }
+  .slider-wrapper .slide-item.current .content {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 1s ease-in-out .4s;
+  }
 
   #prev, #next {
     position: absolute;
