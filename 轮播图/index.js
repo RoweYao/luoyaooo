@@ -40,7 +40,7 @@ window.onload = () => {
       }, interval)
     }
   }
-  // 下一张图片
+// 下一张图片
   function handleNext () {
     let current = slides[currentIndex]
     current.classList.remove('current')

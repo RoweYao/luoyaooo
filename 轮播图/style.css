@@ -12,6 +12,7 @@ main {
   position: relative;
   height: 100vh;
   width: 100vw;
+  background: #000;
   overflow: hidden;
 }
 
@@ -43,6 +44,7 @@ main {
 }
 
 .slider-wrapper .slide-item .content h2 {
+  margin-top: 0;
   font-size: 24px;
 }
 

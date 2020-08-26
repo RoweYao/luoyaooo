@@ -47,5 +47,13 @@ function bubbleSort (arr) {
         flag = true
       }
     }
+    console.log(`第${i + 1}轮排序完成${flag ? '' : ',排序完成'}`)
+    if (!flag) {
+      break
+    } else {
+      flag = false
+    }
   }
+  console.log(arr)
+  return arr
 }
