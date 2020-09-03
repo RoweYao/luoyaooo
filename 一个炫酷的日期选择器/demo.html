@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_2039579_vizkxwvfsxo.css">
+  <title>日期选择器</title>
+</head>
+<body>
+  <main class="container">
+    <div class="date-picker-wrapper">
+      <div class="date-picker-header">
+        <div class="date-picker-display-year">
+          <div class="date-picker-slide-wrapper">
+            <div class="date-picker-display-year-text" id="hyear">2022</div>
+          </div>
+        </div>
+        <div class="date-picker-display-monthday">
+          <div class="date-picker-slide-wrapper">
+            <div class="date-picker-display-monthday-text" id="hmonthday">09-10 星期五</div>
+          </div>
+        </div>
+      </div>
+      <div class="date-picker-container">
+        <div class="date-picker-control">
+          <i class="iconfont icon-prev" onclick="prevMonth()"></i>
+          <div class="date-picker-control-yearmonth">
+            <div class="date-picker-slide-wrapper">
+              <div class="date-picker-control-yearmonth-text" id="cmonthday">2022年十月</div>
+            </div>
+          </div>
+          <i class="iconfont icon-next" onclick="nextMonth()"></i>
+        </div>
+        <div class="date-picker-week">
+          <span class="date-picker-week-day">日</span>
+          <span class="date-picker-week-day">一</span>
+          <span class="date-picker-week-day">二</span>
+          <span class="date-picker-week-day">三</span>
+          <span class="date-picker-week-day">四</span>
+          <span class="date-picker-week-day">五</span>
+          <span class="date-picker-week-day">六</span>
+        </div>
+        <div class="date-picker-days fade" id="days">
+          <li class="date-picker-day empty"></li>
+          <li class="date-picker-day empty"></li>
+          <li class="date-picker-day today">1</li>
+          <li class="date-picker-day">2</li>
+          <li class="date-picker-day">3</li>
+          <li class="date-picker-day">4</li>
+          <li class="date-picker-day">5</li>
+          <li class="date-picker-day">6</li>
+          <li class="date-picker-day">7</li>
+          <li class="date-picker-day">8</li>
+          <li class="date-picker-day">9</li>
+          <li class="date-picker-day">10</li>
+          <li class="date-picker-day">11</li>
+          <li class="date-picker-day">12</li>
+          <li class="date-picker-day">13</li>
+          <li class="date-picker-day">14</li>
+          <li class="date-picker-day">15</li>
+          <li class="date-picker-day">16</li>
+          <li class="date-picker-day">17</li>
+          <li class="date-picker-day">18</li>
+          <li class="date-picker-day">19</li>
+          <li class="date-picker-day">20</li>
+          <li class="date-picker-day">21</li>
+          <li class="date-picker-day">22</li>
+          <li class="date-picker-day">23</li>
+          <li class="date-picker-day">24</li>
+          <li class="date-picker-day">25</li>
+          <li class="date-picker-day">26</li>
+          <li class="date-picker-day">27</li>
+          <li class="date-picker-day">28</li>
+          <li class="date-picker-day">29</li>
+          <li class="date-picker-day">30</li>
+          <li class="date-picker-day">31</li>
+          <li class="date-picker-day empty"></li>
+          <li class="date-picker-day empty"></li>
+          <li class="date-picker-day empty"></li>
+          <li class="date-picker-day empty"></li>
+          <li class="date-picker-day empty"></li>
+          <li class="date-picker-day empty"></li>
+          <li class="date-picker-day empty"></li>
+          <li class="date-picker-day empty"></li>
+          <li class="date-picker-day empty"> </li>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="./index.js"></script>
+</body>
+</html>
