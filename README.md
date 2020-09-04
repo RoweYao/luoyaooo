@@ -9,4 +9,5 @@
 - <a href="https://roweyao.github.io/luoyaooo/%E5%BA%95%E9%83%A8%E5%86%92%E6%B3%A1%E7%89%B9%E6%95%88/demo.html">网页底部冒泡</a>
 - <a href="https://roweyao.github.io/luoyaooo/%E8%BD%AE%E6%92%AD%E5%9B%BE/demo.html">轮播图</a>
 - <a href="https://roweyao.github.io/luoyaooo/%E7%BA%AFCSS%E9%A1%B5%E9%9D%A2%E5%B9%B3%E6%BB%91%E8%BF%87%E6%B8%A1%E6%95%88%E6%9E%9C/demo.html">纯CSS页面平滑过渡</a>
-- <a href="https://roweyao.github.io/luoyaooo/一个炫酷的日期选择器/demo.html">一个炫酷的日历</a>
+- <a href="https://roweyao.github.io/luoyaooo/%E4%B8%80%E4%B8%AA%E7%82%AB%E9%85%B7%E7%9A%84%E6%97%A5%E6%9C%9F%E9%80%89%E6%8B%A9%E5%99%A8/demo.html">一个炫酷的日历</a>
+- <a href="https://roweyao.github.io/luoyaooo/%E7%82%B9%E5%87%BB%E6%B3%A2%E7%BA%B9%E7%89%B9%E6%95%88/demo.html">点击波纹特效</a>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="../common/reset.css">
+  <title>点击波纹特效</title>
+</head>
+<body>
+  <main class="container">
+    <div class="demo-item">
+      <div class="ripple-wrapper" onclick="clickRipple(event)">
+        <!-- <div class="ripple-animation"></div> -->
+      </div>
+    </div>
+    <div class="demo-item">
+      <div class="ripple-wrapper" onclick="clickRipple(event, 'red')">
+        <!-- <div class="ripple-animation"></div> -->
+      </div>
+    </div>
+    <div class="demo-item">
+      <div class="ripple-wrapper" onclick="clickRipple(event, 'blue')">
+        <!-- <div class="ripple-animation"></div> -->
+      </div>
+    </div>
+  </main>
+  <script src="./index.js"></script>
+</body>
+</html>

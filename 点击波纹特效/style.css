@@ -1,0 +1,57 @@
+body, html {
+  background: #3f3f3f;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.demo-item {
+  margin: 10px;
+  height: 150px;
+  width: 150px;
+  background: #fff;
+}
+
+.ripple-wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.ripple-wrapper .ripple-animation {
+  position: absolute;
+  /* top: 200px;
+  left: 200px; */
+  width: 300%;
+  height: 300%;
+  border-radius: 50%;
+  /* background-color: rgba(0, 152, 255, 0.78); */
+  pointer-events: none; /* 防止波纹div 成为点击事件target */
+  transform: scale(0) translate(-50%, -50%);
+  transform-origin: 0% 0%;
+  animation: ripple .4s linear;
+}
+
+@keyframes ripple {
+  from {
+    opacity: 0;
+    /* width: 0;
+    height: 0; */
+  }
+  60% {
+    opacity: .8;
+  }
+  to {
+    opacity: 0;
+    transform: scale(1) translate(-50%, -50%);
+    /* width: 200%;
+    height: 200%; */
+  }
+}
