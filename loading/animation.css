@@ -1,0 +1,785 @@
+
+/* 顺时针旋转 */
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* 逆时针旋转 */
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+/* loading14动画 */
+@keyframes loading14 {
+  0% {
+    opacity: 1;
+    transform: scale(.2);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+}
+/* loading22动画 */
+@keyframes loading22 {
+  0% {
+    border-color: rgba(255, 255, 255) transparent rgba(255, 255, 255, .25) rgba(255, 255, 255, .5);
+  }
+  25% {
+    border-color: rgba(255, 255, 255, .5) rgba(255, 255, 255) transparent rgba(255, 255, 255, .25);
+  }
+  50% {
+    border-color: rgba(255, 255, 255, .25) rgba(255, 255, 255, .5) rgba(255, 255, 255) transparent;
+  }
+  75% {
+    border-color: transparent rgba(255, 255, 255, .25) rgba(255, 255, 255, .5) rgba(255, 255, 255);
+  }
+  100% {
+    border-color: rgba(255, 255, 255) transparent rgba(255, 255, 255, .25) rgba(255, 255, 255, .5);
+  }
+}
+/* loading25动画 */
+@keyframes loading25 {
+  0% {
+    opacity: .9;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+}
+/* loading26动画 */
+@keyframes loading26 {
+  0% {
+    opacity: .9;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+}
+/* loading27动画 */
+@keyframes loading27 {
+  0%, 100% {
+    opacity: .9;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+}
+/* loading28动画 */
+@keyframes loading28 {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+/* loading34动画 */
+@keyframes loading34 {
+  0% {
+    border-color: rgba(255, 255, 255, 0.65)
+                  rgba(255, 255, 255, 0.15)
+                  rgba(255, 255, 255, 0.25)
+                  rgba(255, 255, 255, 0.45);
+  }
+  25% {
+    border-color: rgba(255, 255, 255, 0.45)
+                  rgba(255, 255, 255, 0.65)
+                  rgba(255, 255, 255, 0.15)
+                  rgba(255, 255, 255, 0.25);
+  }
+  50% {
+    border-color: rgba(255, 255, 255, 0.25)
+                  rgba(255, 255, 255, 0.45)
+                  rgba(255, 255, 255, 0.65)
+                  rgba(255, 255, 255, 0.15);
+  }
+  75% {
+    border-color: rgba(255, 255, 255, 0.15)
+                  rgba(255, 255, 255, 0.25)
+                  rgba(255, 255, 255, 0.45)
+                  rgba(255, 255, 255, 0.65);
+  }
+  100% {
+    border-color: rgba(255, 255, 255, 0.65)
+                  rgba(255, 255, 255, 0.15)
+                  rgba(255, 255, 255, 0.25)
+                  rgba(255, 255, 255, 0.45);
+  }
+}
+/* loading36动画 */
+@keyframes loading36 {
+  0%{
+    transform: scale(0) rotate(0deg);
+  }
+  50% {
+    transform: scale(1) rotate(360deg);
+  }
+  100% {
+    transform: scale(0) rotate(720deg);
+  }
+}
+/* loading37动画 */
+@keyframes loading37 {
+  0%, 100%{
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+/* loading38动画 */
+@keyframes loading38 {
+  50% {
+    top: 50%;
+    transform: scale(1.4) translate(-50%, -50%);
+  }
+}
+/* loading39动画 */
+@keyframes loading39 {
+  50% {
+    box-shadow: 0px 0 rgba(255, 255, 255, .2),
+              0px 0 rgba(255, 255, 255, .2);
+  }
+}
+/* loading40动画 */
+@keyframes loading40 {
+  33% {
+    background-color: var(--light);
+    box-shadow: 20px 0 var(--light),
+              -20px 0 var(--brand);
+  }
+  66% {
+    background-color: var(--brand);
+    box-shadow: 20px 0 var(--light),
+              -20px 0 var(--light);
+  }
+  100% {
+    background-color: var(--light);
+    box-shadow: 20px 0 var(--brand),
+              -20px 0 var(--light);
+  }
+}
+/* loading42动画 */
+@keyframes loading42 {
+  0%, 100% {
+    top: calc(50% + 5px);
+    box-shadow: 20px -10px var(--light),
+              -20px -10px var(--light);
+  }
+  50% {
+    top: calc(50% - 5px);
+    box-shadow: 20px 10px var(--light),
+              -20px 10px var(--light);
+  }
+}
+/* loading43动画 */
+@keyframes loading43 {
+  0% {
+    box-shadow: -100px 10px rgba(255, 255, 255, 0),
+              -100px 10px rgba(255, 255, 255, 0),
+              -100px 10px rgba(255, 255, 255, 0),
+              -100px 10px rgba(255, 255, 255, 0);
+  }
+  12.5% {
+    box-shadow: -30px 10px rgba(255, 255, 255, 1),
+              -100px 10px rgba(255, 255, 255, 0),
+              -100px 10px rgba(255, 255, 255, 0),
+              -100px 10px rgba(255, 255, 255, 0);
+  }
+  25% {
+    box-shadow: -20px 10px rgba(255, 255, 255, 1),
+              -30px 10px rgba(255, 255, 255, 1),
+              -100px 10px rgba(255, 255, 255, 0),
+              -100px 10px rgba(255, 255, 255, 0);
+  }
+  32.5% {
+    box-shadow: -10px 10px rgba(255, 255, 255, 1),
+              -20px 10px rgba(255, 255, 255, 1),
+              -30px 10px rgba(255, 255, 255, 1),
+              -100px 10px rgba(255, 255, 255, 0);
+  }
+  50% {
+    box-shadow: 0px 10px rgba(255, 255, 255, 1),
+              -10px 10px rgba(255, 255, 255, 1),
+              -20px 10px rgba(255, 255, 255, 1),
+              -30px 10px rgba(255, 255, 255, 1);
+  }
+  62.5% {
+    box-shadow: 100px 10px rgba(255, 255, 255, 0),
+              0px 10px rgba(255, 255, 255, 1),
+              -10px 10px rgba(255, 255, 255, 1),
+              -20px 10px rgba(255, 255, 255, 1);
+  }
+  75% {
+    box-shadow: 100px 10px rgba(255, 255, 255, 0),
+              100px 10px rgba(255, 255, 255, 0),
+              0px 10px rgba(255, 255, 255, 1),
+              -10px 10px rgba(255, 255, 255, 1);
+  }
+  87.5% {
+    box-shadow: 100px 10px rgba(255, 255, 255, 0),
+              100px 10px rgba(255, 255, 255, 0),
+              100px 10px rgba(255, 255, 255, 0),
+              0px 10px rgba(255, 255, 255, 1);
+  }
+  100% {
+    box-shadow: 100px 10px rgba(255, 255, 255, 0),
+              100px 10px rgba(255, 255, 255, 0),
+              100px 10px rgba(255, 255, 255, 0),
+              100px 10px rgba(255, 255, 255, 0);
+  }
+}
+/* loading44动画 */
+@keyframes loading44 {
+  20% {
+    box-shadow: -38px 0px 0 8px var(--light),
+              -14px 0px 0 2px var(--light),
+              14px 0px 0 2px var(--light),
+              38px 0px 0 2px var(--light);
+  }
+  40% {
+    box-shadow: -38px 0px 0 2px var(--light),
+              -14px 0px 0 8px var(--light),
+              14px 0px 0 2px var(--light),
+              38px 0px 0 2px var(--light);
+  }
+  60% {
+    box-shadow: -38px 0px 0 2px var(--light),
+              -14px 0px 0 2px var(--light),
+              14px 0px 0 8px var(--light),
+              38px 0px 0 2px var(--light);
+  }
+  80% {
+    box-shadow: -38px 0px 0 2px var(--light),
+              -14px 0px 0 2px var(--light),
+              14px 0px 0 2px var(--light),
+              38px 0px 0 8px var(--light);
+  }
+}
+/* loading45动画 */
+@keyframes loading45 {
+  20% {
+    box-shadow: -38px -12px var(--light),
+              -14px 0px var(--light),
+              14px 0px var(--light),
+              38px 0px var(--light);
+  }
+  40% {
+    box-shadow: -38px 0px var(--light),
+              -14px -12px var(--light),
+              14px 0px var(--light),
+              38px 0px var(--light);
+  }
+  60% {
+    box-shadow: -38px 0px var(--light),
+              -14px 0px var(--light),
+              14px -12px var(--light),
+              38px 0px var(--light);
+  }
+  80% {
+    box-shadow: -38px 0px var(--light),
+              -14px 0px var(--light),
+              14px 0px var(--light),
+              38px -12px var(--light);
+  }
+}
+/* loading46动画 */
+@keyframes loading46 {
+  0% {
+    box-shadow: 0 -24px 0 8px rgba(255, 255, 255, 1),
+              17px -17px 0 6px rgba(255, 255, 255, 0),
+              24px 0px 0 4px rgba(255, 255, 255, 0),
+              17px 17px 0 2px rgba(255, 255, 255, 0),
+              0px 24px 0 1px rgba(255, 255, 255, 0),
+              -17px 17px 0 2px rgba(255, 255, 255, 0),
+              -24px 0px 0 4px rgba(255, 255, 255, 0),
+              -17px -17px 0 6px rgba(255, 255, 255, 0);
+  }
+  12.5% {
+    box-shadow: 0 -24px 0 8px rgba(255, 255, 255, 0),
+              17px -17px 0 6px rgba(255, 255, 255, 1),
+              24px 0px 0 4px rgba(255, 255, 255, 0),
+              17px 17px 0 2px rgba(255, 255, 255, 0),
+              0px 24px 0 1px rgba(255, 255, 255, 0),
+              -17px 17px 0 2px rgba(255, 255, 255, 0),
+              -24px 0px 0 4px rgba(255, 255, 255, 0),
+              -17px -17px 0 6px rgba(255, 255, 255, 0);
+  }
+  25% {
+    box-shadow: 0 -24px 0 8px rgba(255, 255, 255, 0),
+              17px -17px 0 6px rgba(255, 255, 255, 0),
+              24px 0px 0 4px rgba(255, 255, 255, 1),
+              17px 17px 0 2px rgba(255, 255, 255, 0),
+              0px 24px 0 1px rgba(255, 255, 255, 0),
+              -17px 17px 0 2px rgba(255, 255, 255, 0),
+              -24px 0px 0 4px rgba(255, 255, 255, 0),
+              -17px -17px 0 6px rgba(255, 255, 255, 0);
+  }
+  37.5% {
+    box-shadow: 0 -24px 0 8px rgba(255, 255, 255, 0),
+              17px -17px 0 6px rgba(255, 255, 255, 0),
+              24px 0px 0 4px rgba(255, 255, 255, 0),
+              17px 17px 0 2px rgba(255, 255, 255, 1),
+              0px 24px 0 1px rgba(255, 255, 255, 0),
+              -17px 17px 0 2px rgba(255, 255, 255, 0),
+              -24px 0px 0 4px rgba(255, 255, 255, 0),
+              -17px -17px 0 6px rgba(255, 255, 255, 0);
+  }
+  50% {
+    box-shadow: 0 -24px 0 8px rgba(255, 255, 255, 0),
+              17px -17px 0 6px rgba(255, 255, 255, 0),
+              24px 0px 0 4px rgba(255, 255, 255, 0),
+              17px 17px 0 2px rgba(255, 255, 255, 0),
+              0px 24px 0 1px rgba(255, 255, 255, 1),
+              -17px 17px 0 2px rgba(255, 255, 255, 0),
+              -24px 0px 0 4px rgba(255, 255, 255, 0),
+              -17px -17px 0 6px rgba(255, 255, 255, 0);
+  }
+  62.5% {
+    box-shadow: 0 -24px 0 8px rgba(255, 255, 255, 0),
+              17px -17px 0 6px rgba(255, 255, 255, 0),
+              24px 0px 0 4px rgba(255, 255, 255, 0),
+              17px 17px 0 2px rgba(255, 255, 255, 0),
+              0px 24px 0 1px rgba(255, 255, 255, 0),
+              -17px 17px 0 2px rgba(255, 255, 255, 1),
+              -24px 0px 0 4px rgba(255, 255, 255, 0),
+              -17px -17px 0 6px rgba(255, 255, 255, 0);
+  }
+  75% {
+    box-shadow: 0 -24px 0 8px rgba(255, 255, 255, 0),
+              17px -17px 0 6px rgba(255, 255, 255, 0),
+              24px 0px 0 4px rgba(255, 255, 255, 0),
+              17px 17px 0 2px rgba(255, 255, 255, 0),
+              0px 24px 0 1px rgba(255, 255, 255, 0),
+              -17px 17px 0 2px rgba(255, 255, 255, 0),
+              -24px 0px 0 4px rgba(255, 255, 255, 1),
+              -17px -17px 0 6px rgba(255, 255, 255, 0);
+  }
+  87.5% {
+    box-shadow: 0 -24px 0 8px rgba(255, 255, 255, 0),
+              17px -17px 0 6px rgba(255, 255, 255, 0),
+              24px 0px 0 4px rgba(255, 255, 255, 0),
+              17px 17px 0 2px rgba(255, 255, 255, 0),
+              0px 24px 0 1px rgba(255, 255, 255, 0),
+              -17px 17px 0 2px rgba(255, 255, 255, 0),
+              -24px 0px 0 4px rgba(255, 255, 255, 0),
+              -17px -17px 0 6px rgba(255, 255, 255, 1);
+  }
+  100% {
+    box-shadow: 0 -24px 0 8px rgba(255, 255, 255, 1),
+              17px -17px 0 6px rgba(255, 255, 255, 0),
+              24px 0px 0 4px rgba(255, 255, 255, 0),
+              17px 17px 0 2px rgba(255, 255, 255, 0),
+              0px 24px 0 1px rgba(255, 255, 255, 0),
+              -17px 17px 0 2px rgba(255, 255, 255, 0),
+              -24px 0px 0 4px rgba(255, 255, 255, 0),
+              -17px -17px 0 6px rgba(255, 255, 255, 0);
+  }
+}
+/* loading48动画 */
+@keyframes loading48 {
+  0% {
+    opacity: 1;
+    transform: scale(0) translate(-50%, -50%);
+  }
+  80% {
+    opacity: .6;
+    transform: scale(.8) translate(-50%, -50%);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1) translate(-50%, -50%);
+  }
+}
+/* loading50动画 */
+@keyframes loading50 {
+  0% {
+    transform: perspective(200px) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(200px) rotateX(0deg) rotateY(180deg);
+  }
+  100% {
+    transform: perspective(200px) rotateX(180deg) rotateY(180deg);
+  }
+}
+/* loading51动画 */
+@keyframes loading51 {
+  50% {
+    top: 0%;
+  }
+}
+/* loading52动画 */
+@keyframes loading52 {
+  50% {
+    transform: scale(0) rotate(180deg);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
+}
+/* loading53动画 */
+@keyframes loading53 {
+  0% {
+    transform: perspective(200px) rotateX(0deg) rotateY(0deg);
+  }
+  25% {
+    transform: perspective(200px) rotateX(0deg) rotateY(180deg);
+  }
+  50% {
+    transform: perspective(200px) rotateX(-180deg) rotateY(180deg);
+  }
+  75% {
+    transform: perspective(200px) rotateX(-180deg) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(200px) rotateX(0deg) rotateY(0deg);
+  }
+}
+/* loading54动画 */
+@keyframes loading54 {
+  33% {
+    left: 50%;
+    right: 0;
+    bottom: 50%;
+  }
+  66% {
+    left: 50%;
+    right: 0;
+    bottom: 0;
+  }
+  96%, 100% {
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
+}
+/* loading55动画 */
+@keyframes loading55b {
+  0% , 32%{
+    box-shadow: 0px var(--r) var(--light),
+                var(--r) var(--r) transparent,
+                var(--r) var(--size) transparent,
+                0px var(--size) transparent;
+  }
+  33% , 65% {
+    box-shadow: 0px var(--r) var(--light),
+                var(--r) var(--r) var(--light),
+                var(--r) var(--size) transparent,
+                0px var(--size) transparent;
+  }
+  66% , 95% {
+    box-shadow: 0px var(--r) var(--light),
+                var(--r) var(--r) var(--light),
+                var(--r) var(--size) var(--light),
+                0px var(--size) transparent;
+  }
+  96%, 100% {
+    box-shadow: 0px var(--r) var(--light),
+                var(--r) var(--r) var(--light),
+                var(--r) var(--size) var(--light),
+                0px var(--size) var(--light);
+  }
+}
+@keyframes loading55a {
+  0% {
+    transform: perspective(200px) rotateX(0deg) rotateY(0deg);
+  }
+  33% {
+    transform: perspective(200px) rotateX(0deg) rotateY(180deg);
+  }
+  66% {
+    transform: perspective(200px) rotateX(-180deg) rotateY(180deg);
+  }
+  96%, 100% {
+    transform: perspective(200px) rotateX(-180deg) rotateY(0deg);
+  }
+}
+/* loading56动画 */
+@keyframes loading56b {
+  0%{
+    box-shadow: 0px var(--r) transparent,
+                var(--r) var(--r) transparent,
+                var(--r) var(--size) transparent,
+                0px var(--size) transparent;
+  }
+  12.5% {
+    box-shadow: 0px var(--r) var(--light),
+                var(--r) var(--r) transparent,
+                var(--r) var(--size) transparent,
+                0px var(--size) transparent;
+  }
+  25% {
+    box-shadow: 0px var(--r) var(--light),
+                var(--r) var(--r) var(--light),
+                var(--r) var(--size) transparent,
+                0px var(--size) transparent;
+  }
+  37.5% {
+    box-shadow: 0px var(--r) var(--light),
+                var(--r) var(--r) var(--light),
+                var(--r) var(--size) var(--light),
+                0px var(--size) transparent;
+  }
+  50% {
+    box-shadow: 0px var(--r) var(--light),
+                var(--r) var(--r) var(--light),
+                var(--r) var(--size) var(--light),
+                0px var(--size) var(--light);
+  }
+  62.5% {
+    box-shadow: 0px var(--r) transparent,
+                var(--r) var(--r) var(--light),
+                var(--r) var(--size) var(--light),
+                0px var(--size) var(--light);
+  }
+  75% {
+    box-shadow: 0px var(--r) transparent,
+                var(--r) var(--r) transparent,
+                var(--r) var(--size) var(--light),
+                0px var(--size) var(--light);
+  }
+  87.5% {
+    box-shadow: 0px var(--r) transparent,
+                var(--r) var(--r) transparent,
+                var(--r) var(--size) transparent,
+                0px var(--size) var(--light);
+  }
+  100% {
+    box-shadow: 0px var(--r) transparent,
+                var(--r) var(--r) transparent,
+                var(--r) var(--size) transparent,
+                0px var(--size) transparent;
+  }
+}
+@keyframes loading56a {
+  0% {
+    transform: perspective(200px) rotateX(0deg) rotateY(0deg);
+  }
+  33% {
+    transform: perspective(200px) rotateX(0deg) rotateY(180deg);
+  }
+  66% {
+    transform: perspective(200px) rotateX(-180deg) rotateY(180deg);
+  }
+  96%, 100% {
+    transform: perspective(200px) rotateX(-180deg) rotateY(0deg);
+  }
+}
+/* loading57动画 */
+@keyframes loading57 {
+  0%, 100% {
+    top: 0px;
+    color: var(--light);
+  }
+  50% {
+    top: 30px;
+    color: rgba(255, 255, 255, .2);
+  }
+}
+/* loading58动画 */
+@keyframes loading58 {
+  50% {
+    height: 10px;
+  }
+}
+/* loading60动画 */
+@keyframes loading60 {
+  50% {
+    color: rgba(255, 255, 255, .2);
+  }
+}
+/* loading61动画 */
+@keyframes loading61 {
+  0% {
+    box-shadow: 20px -10px,
+              40px 10px,
+              60px 0px;
+  }
+  25% {
+    box-shadow: 20px 0px,
+                40px 0px,
+                60px -10px;
+  }
+  50% {
+    box-shadow: 20px 10px,
+                40px -10px,
+                60px 0px;
+  }
+  70% {
+    box-shadow: 20px 0px,
+                40px 0px,
+                60px 10px;
+  }
+  100% {
+    box-shadow: 20px -10px,
+                40px 10px,
+                60px 0px;
+  }
+}
+/* loading62动画 */
+@keyframes loading62 {
+  0% {
+    box-shadow: 10px 15px,
+                0px 30px,
+                -10px 45px;
+  }
+  25% {
+    box-shadow: 0px 15px,
+                10px 30px,
+                0px 45px;
+  }
+  50% {
+    box-shadow: -10px 15px,
+                0px 30px,
+                10px 45px;
+  }
+  70% {
+    box-shadow: 0px 15px,
+                -10px 30px,
+                0px 45px;
+  }
+  100% {
+    box-shadow: 10px 15px,
+                0px 30px,
+                -10px 45px;
+  }
+}
+/* loading63动画 */
+@keyframes loading63 {
+  50% {
+    width: 10px;
+  }
+}
+/* loading65动画 */
+@keyframes loading65 {
+  0% {
+    box-shadow: 20px 0px transparent,
+                40px 0px transparent,
+                60px 0px transparent,
+                80px 0px transparent,
+                100px 0px transparent;
+  }
+  20% {
+    box-shadow: 20px 0px var(--light),
+                40px 0px transparent,
+                60px 0px transparent,
+                80px 0px transparent,
+                100px 0px transparent;
+  }
+  40% {
+    box-shadow: 20px 0px var(--light),
+                40px 0px var(--light),
+                60px 0px transparent,
+                80px 0px transparent,
+                100px 0px transparent;
+  }
+  60% {
+    box-shadow: 20px 0px var(--light),
+                40px 0px var(--light),
+                60px 0px var(--light),
+                80px 0px transparent,
+                100px 0px transparent;
+  }
+  80% {
+    box-shadow: 20px 0px var(--light),
+                40px 0px var(--light),
+                60px 0px var(--light),
+                80px 0px var(--light),
+                100px 0px transparent;
+  }
+  100% {
+    box-shadow: 20px 0px var(--light),
+                40px 0px var(--light),
+                60px 0px var(--light),
+                80px 0px var(--light),
+                100px 0px var(--light);
+  }
+}
+/* loading67动画 */
+@keyframes loading67 {
+  50% {
+    left: 75%;
+  }
+}
+/* loading68动画 */
+@keyframes loading68 {
+  0% {
+    left: -60%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+/* loading69动画 */
+@keyframes loading69 {
+  0% {
+    left: -110%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+/* loading70动画 */
+@keyframes loading70 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;;
+  }
+}
+/* loading70ab动画 */
+@keyframes loading70b {
+  0% {
+    opacity: 1;
+    transform: rotate(45deg) translateX(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(45deg) translateX(-50px);
+  }
+}
+@keyframes loading70a {
+  0% {
+    opacity: 1;
+    transform: rotate(-45deg) translateX(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(-45deg) translateX(-50px);
+  }
+}
+/* loading72动画 */
+@keyframes loading72 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+/* loading73动画 */
+@keyframes loading73 {
+  0% {
+    background-position: 0 0em;
+  }
+  100% {
+    background-position: 0 1em;
+  }
+}
