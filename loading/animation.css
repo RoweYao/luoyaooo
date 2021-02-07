@@ -777,9 +777,9 @@
 /* loading73动画 */
 @keyframes loading73 {
   0% {
-    background-position: 0 0em;
+    background-position: 1em 0em;
   }
   100% {
-    background-position: 0 1em;
+    background-position: 0em 0em;
   }
 }

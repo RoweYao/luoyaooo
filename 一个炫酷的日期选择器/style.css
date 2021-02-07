@@ -1,246 +1,245 @@
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: '微软雅黑';
-  outline: none;
-  background: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "微软雅黑";
+    outline: none;
+    background: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 div {
-  cursor: default;
+    cursor: default;
 }
 
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
-  font-size: 0;
-  background: #797979;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    font-size: 0;
+    background: #797979;
 }
 
 .container .date-picker-wrapper {
-  /* padding: 10px; */
-  overflow: hidden;
-  width: 300px;
-  background: #fff;
-  box-shadow: 0 2px 1px -1px rgba(0,0,0,.2),
-              0 1px 1px 0 rgba(0,0,0,.14),
-              0 1px 3px 0 rgba(0,0,0,.12);
+    /* padding: 10px; */
+    overflow: hidden;
+    width: 300px;
+    background: #fff;
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2),
+        0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
 }
 
 .date-picker-wrapper .date-picker-header {
-  padding: 10px;
-  background: #2d7fd4;
+    padding: 10px;
+    background: #2d7fd4;
 }
 
 .date-picker-header .date-picker-display-year {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .date-picker-display-year .date-picker-slide-wrapper {
-  height: 24px;
-  line-height: 24px;
-  overflow: hidden;
+    height: 24px;
+    line-height: 24px;
+    overflow: hidden;
 }
 
 .date-picker-header .date-picker-display-year-text {
-  font-size: 18px;
-  font-weight: 700;
-  color: rgba(255, 255, 255, .7)
+    font-size: 18px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .date-picker-header .date-picker-display-monthday-text {
-  font-size: 32px;
-  font-weight: 500;
-  color: #fff;
-  text-align: center;
+    font-size: 32px;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
 }
 
 .date-picker-display-monthday .date-picker-slide-wrapper {
-  overflow: hidden;
-  height: 36px;
-  line-height: 36px;
+    overflow: hidden;
+    height: 36px;
+    line-height: 36px;
 }
 
 .date-picker-container {
-  padding: 0 10px 10px 10px;
-  transition: all 1.2s linear;
+    padding: 0 10px 10px 10px;
+    transition: all 1.2s linear;
 }
 
 .date-picker-container .date-picker-control {
-  display: flex;
-  align-items: center;
-  /* padding: 16px 0; */
-  height: 40px;
-  line-height: 40px;
+    display: flex;
+    align-items: center;
+    /* padding: 16px 0; */
+    height: 40px;
+    line-height: 40px;
 }
 
 .date-picker-control .iconfont {
-  font-weight: 700;
-  font-size: 16px;
-  cursor: pointer;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 .date-picker-control .date-picker-control-yearmonth {
-  flex: 1;
-  text-align: center;
+    flex: 1;
+    text-align: center;
 }
 
 .date-picker-control-yearmonth .date-picker-control-yearmonth-text {
-  font-size: 16px;
-  font-weight: 400;
+    font-size: 16px;
+    font-weight: 400;
 }
 
 .date-picker-week {
-  display: flex;
-  align-items: center;
-  height: 24px;
-  line-height: 24px;
-  text-align: center;
+    display: flex;
+    align-items: center;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
 }
 
 .date-picker-week .date-picker-week-day {
-  width: 50px;
-  font-size: 16px;
-  color: rgba(0, 0, 0, .5);
+    width: 50px;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.5);
 }
 
 .date-picker-days {
-  display: flex;
-  flex-wrap: wrap;
-  /* min-height: 345px; */
-  /* align-items: center; */
-  /* background: red; */
-  text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    /* min-height: 345px; */
+    /* align-items: center; */
+    /* background: red; */
+    text-align: center;
 }
 
 .date-picker-days .date-picker-day {
-  /* overflow: hidden; */
-  position: relative;
-  display: inline-block;
-  margin-bottom: 4px;
-  /* padding-bottom: calc(100% / 7); */
-  width: calc(100% / 7);
-  min-height: 35px;
-  line-height: 2.5;
-  list-style: none;
-  font-size: 14px;
-  color: #333;
-  font-weight: 400;
-  transition: all .3s linear;
-  cursor: pointer;
-  z-index: 100;
+    /* overflow: hidden; */
+    position: relative;
+    display: inline-block;
+    margin-bottom: 4px;
+    /* padding-bottom: calc(100% / 7); */
+    width: calc(100% / 7);
+    min-height: 35px;
+    line-height: 2.5;
+    list-style: none;
+    font-size: 14px;
+    color: #333;
+    font-weight: 400;
+    transition: all 0.3s linear;
+    cursor: pointer;
+    z-index: 100;
 }
 
 .date-picker-day.today {
-  color: #2d7fd4;
+    color: #2d7fd4;
 }
 
 /* 设置鼠标停留样式 */
 .date-picker-day:before {
-  z-index: -1;
-  position: absolute;
-  top: calc(50% - 18px);
-  left: calc(50% - 18px);
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: #2d7fd490;
-  transition: all .3s linear;
-  transform: scale(0);
-  opacity: 0;
-  content: '';
+    z-index: -1;
+    position: absolute;
+    top: calc(50% - 18px);
+    left: calc(50% - 18px);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #2d7fd490;
+    transition: all 0.3s linear;
+    transform: scale(0);
+    opacity: 0;
+    content: "";
 }
 
 .date-picker-day:hover {
-  color: #fff;
+    color: #fff;
 }
 
 .date-picker-day:hover:before {
-  transform: scale(1);
-  opacity: 1;
+    transform: scale(1);
+    opacity: 1;
 }
 
 /* 设置选中日期的样式 */
 .date-picker-day.active {
-  color: #fff;
+    color: #fff;
 }
 
 .date-picker-day.active:before {
-  opacity: 1;
-  transform: scale(1);
-  background-color: #2d7fd4;
+    opacity: 1;
+    transform: scale(1);
+    background-color: #2d7fd4;
 }
 
 /* 清除空日资的hover */
 
 .date-picker-day.empty {
-  cursor: default;
+    cursor: default;
 }
 
 .date-picker-day.empty:before {
-  content: none;
+    content: none;
 }
 
 /* 过渡动画 */
 .slideLeft {
-  animation: slideLeft .2s linear .1s backwards;
+    animation: slideLeft 0.2s linear 0.1s backwards;
 }
 
 .slideRight {
-  animation: slideRight .2s linear .1s backwards;
+    animation: slideRight 0.2s linear 0.1s backwards;
 }
 
 .slideUp {
-  animation: slideUp .2s linear .1s backwards;
+    animation: slideUp 0.2s linear 0.1s backwards;
 }
 
 .slideDown {
-  animation: slideDown .2s linear .1s backwards;
+    animation: slideDown 0.2s linear 0.1s backwards;
 }
 
 @keyframes slideLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 @keyframes slideRight {
-  from {
-    opacity: 0;
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 @keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 @keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-100%);
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }

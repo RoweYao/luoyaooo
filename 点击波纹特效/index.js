@@ -1,27 +1,33 @@
 // 默认颜色
-const DEFAULT_COLOR = 'rgba(0, 152, 255, 0.78)'
-
+const DEFAULT_COLOR = "rgba(0, 152, 255, 0.78)";
 
 // document.getElementById('ripple').onclick
-function clickRipple (event, color) {
-  console.log(event, color)
-  const el = event.toElement
-  // const target = event.target
-  const top = event.layerY || event.offsetY
-  const left = event.layerX || event.offsetX
+/**
+ * 点击波纹动画
+ * @param {Object} event 需要生成点击动画的元素
+ * @param {String} color 点击动画的颜色，可选
+ * @param {Number} duration 点击动画持续时间，单位 ms 可选
+ */
+function clickRipple(event, color, duration) {
+    console.log(event, color);
+    const el = event.toElement;
+    // const target = event.target
+    const top = event.layerY || event.offsetY;
+    const left = event.layerX || event.offsetX;
 
-  // console.log(top, left)
+    // console.log(top, left)
 
-  const ripple = document.createElement('div')
-  ripple.setAttribute('class', 'ripple-animation')
-  ripple.style.left = left + 'px'
-  ripple.style.top = top + 'px'
-  ripple.style.backgroundColor = color || DEFAULT_COLOR
-  // console.log(ripple.style.top)
+    const ripple = document.createElement("div");
+    ripple.setAttribute("class", "ripple-animation");
+    ripple.style.left = left + "px";
+    ripple.style.top = top + "px";
+    ripple.style.backgroundColor = color || DEFAULT_COLOR;
+    ripple.style.animationDuration = (duration || 400) / 1000 + "s";
+    // console.log(ripple.style.top)
 
-  el.appendChild(ripple)
+    el.appendChild(ripple);
 
-  setTimeout(() => {
-    el.removeChild(ripple)
-  }, 400)
+    setTimeout(() => {
+        el.removeChild(ripple);
+    }, duration || 400);
 }

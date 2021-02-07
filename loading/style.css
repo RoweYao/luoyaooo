@@ -1753,6 +1753,7 @@ body, html {
   top: 0;
   left: 0;
   height: inherit;
+  font-size: 15px;
   /* width: 25%; */
   background-color: var(--light);
   background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.25) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.25) 50%, rgba(0, 0, 0, 0.25) 75%, transparent 75%, transparent);
@@ -1760,4 +1761,94 @@ body, html {
   animation: loading72 4s linear infinite,
              loading73 1s linear infinite;
   z-index: 99;
+}
+
+/* loading-74*/
+.loading-74 {
+  display: inline-block;
+  position: relative;
+  margin: 0 20px;
+  height: 8px;
+  width: 100%;
+  min-width: 200px;
+  background-color: rgba(255, 255, 255, .2);
+  overflow: hidden;
+}
+.loading-74:before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: inherit;
+  width: 100%;
+  /* background-color: var(--light); */
+  background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.25) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.25) 50%, rgba(0, 0, 0, 0.25) 75%, transparent 75%, transparent);
+  background-size: 15px 15px;
+  z-index: 100;
+}
+.loading-74:after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: inherit;
+  background-color: var(--light);
+  border-radius: 0px 4px 4px 0;
+  animation: loading72 4s linear infinite;
+  z-index: 99;
+}
+
+/* loading-75*/
+.loading-75 {
+  display: inline-block;
+  position: relative;
+  margin: 0 20px;
+  height: 8px;
+  width: 100%;
+  min-width: 200px;
+  background-color: rgba(255, 255, 255, .2);
+  overflow: hidden;
+}
+.loading-75:after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: inherit;
+  width: 100%;
+  font-size: 30px;
+  background-color: var(--light);
+  background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.25) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.25) 50%, rgba(0, 0, 0, 0.25) 75%, transparent 75%, transparent);
+  background-size: 30px 30px;
+  animation: loading73 1s linear infinite;
+}
+
+/* loading-76*/
+.loading-76 {
+  display: inline-block;
+  position: relative;
+  margin: 0 20px;
+  height: 16px;
+  width: calc(var(--size) * 2);
+  background-color: rgba(255, 255, 255, .2);
+  border-radius: 3px;
+  border: 1px solid var(--light);
+  overflow: hidden;
+}
+.loading-76:after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: inherit;
+  width: 100%;
+  font-size: 30px;
+  background-color: var(--light);
+  background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.25) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.25) 50%, rgba(0, 0, 0, 0.25) 75%, transparent 75%, transparent);
+  background-size: 30px 30px;
+  animation: loading73 1s linear infinite;
 }
