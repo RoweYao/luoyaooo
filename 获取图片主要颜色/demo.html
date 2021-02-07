@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>获取图片的主要颜色</title>
+        <link rel="stylesheet" href="index.css" />
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    </head>
+    <body>
+        <div class="container" id="vueData">
+            <div class="control-wrapper">
+                <input
+                    v-model="newImg"
+                    type="text"
+                    placeholder="输入图片路径"
+                />
+                <button @click="getImgData">解析</button>
+            </div>
+            <div class="result-wrapper">
+                <div
+                    v-if="imgList.length"
+                    v-for="(img, index) in imgList"
+                    :key="index"
+                    class="item"
+                >
+                    <div class="item-left img-wrapper">
+                        <img :src="img.src" />
+                    </div>
+                    <div class="item-right">
+                        <div
+                            v-for="(color, index) in img.mainColor"
+                            class="main-color-item"
+                        >
+                            <div
+                                class="color-preview"
+                                :style="{'background-color': color.color}"
+                            ></div>
+                            <div class="text">{{color.color}}</div>
+                            <div class="weight">{{color.weight}}%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <canvas id="canvas" width="300" height="300"></canvas>
+        <script src="index.js"></script>
+    </body>
+</html>

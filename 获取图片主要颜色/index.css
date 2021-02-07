@@ -1,0 +1,130 @@
+:root {
+    --themeColor: rgb(28, 210, 223);
+}
+body,
+html {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+div,
+input,
+button,
+img {
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}
+button {
+    cursor: pointer;
+}
+#canvas {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+}
+.container {
+    margin: 0 auto;
+    width: 1100px;
+    height: 100%;
+    text-align: center;
+    font-size: 0;
+}
+
+.container .control-wrapper {
+    padding: 100px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container .control-wrapper input {
+    padding: 10px;
+    height: 40px;
+    min-width: 300px;
+    font-size: 16px;
+    border: 2px solid var(--themeColor);
+    border-right: none;
+    border-radius: 5px 0 0 5px;
+}
+.container .control-wrapper button {
+    padding: 0 20px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 40px;
+    color: #fff;
+    background-color: var(--themeColor);
+    /* border: 2px solid var(--themeColor); */
+    border-left: none;
+    border-radius: 0 5px 5px 0;
+}
+
+.result-wrapper {
+    text-align: center;
+}
+.result-wrapper .item {
+    display: flex;
+    margin: 0 auto 30px auto;
+    padding: 20px;
+    width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #ccc;
+    transition: 0.1s all linear;
+    cursor: pointer;
+}
+.result-wrapper .item:hover {
+    box-shadow: 0 0 8px #ccc;
+    transform: scale(1.01);
+}
+
+.item .item-left {
+    flex-shrink: 0;
+}
+.item .img-wrapper {
+    width: 150px;
+    height: 150px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.item .item-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-left: 40px;
+}
+.item .item-right .main-color-item {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    grid-template-areas:
+        "colorArea text"
+        "colorArea weight";
+    width: 50%;
+    height: 50px;
+}
+.item-right .main-color-item .color-preview {
+    grid-area: colorArea;
+    height: 50px;
+    width: 50px;
+    border-radius: 4px;
+}
+.item-right .main-color-item .text {
+    grid-area: text;
+    align-self: self-start;
+}
+.item-right .main-color-item .weight {
+    grid-area: weight;
+    align-self: self-end;
+}
+.item-right .main-color-item .text,
+.item-right .main-color-item .weight {
+    padding-left: 20px;
+    text-align: left;
+    font-size: 14px;
+}
