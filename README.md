@@ -2,7 +2,7 @@
  * @Author: luoyaooo
  * @Date: 2021-02-07 11:25:26
  * @LastEditors: luoyaooo
- * @LastEditTime: 2022-02-09 16:20:52
+ * @LastEditTime: 2022-02-09 16:56:11
 -->
 
 # luoyaooo
@@ -22,3 +22,5 @@
 -   <a href="https://roweyao.github.io/luoyaooo/demo/%E7%82%B9%E5%87%BB%E6%B3%A2%E7%BA%B9%E7%89%B9%E6%95%88/demo.html">点击波纹特效</a>
 -   <a href="https://roweyao.github.io/luoyaooo/demo/loading/demo.html">各种纯 css 的 loading 动画</a>
 -   <a href="https://roweyao.github.io/luoyaooo/demo/%E6%97%B6%E9%92%9F/demo.html">时钟</a>
+-   <a href="https://roweyao.github.io/luoyaooo/demo/hover%E5%8F%91%E5%85%89%E7%89%B9%E6%95%88/demo.html">hover 发光特效</a>
+-   <a href="https://roweyao.github.io/luoyaooo/demo/%E8%8E%B7%E5%8F%96%E5%9B%BE%E7%89%87%E4%B8%BB%E8%A6%81%E9%A2%9C%E8%89%B2/demo.html">获取图片主要颜色</a>
