@@ -75,7 +75,7 @@ div {
     align-items: center;
     /* padding: 16px 0; */
     height: 40px;
-    line-height: 40px;
+    /* line-height: 40px; */
 }
 
 .date-picker-control .iconfont {
@@ -90,6 +90,7 @@ div {
 }
 
 .date-picker-control-yearmonth .date-picker-control-yearmonth-text {
+    display: inline-block;
     font-size: 16px;
     font-weight: 400;
 }
@@ -205,7 +206,7 @@ div {
 @keyframes slideLeft {
     from {
         opacity: 0;
-        transform: translateX(-100%);
+        transform: translateX(-20%);
     }
     to {
         transform: translateX(0);
@@ -216,7 +217,7 @@ div {
 @keyframes slideRight {
     from {
         opacity: 0;
-        transform: translateX(100%);
+        transform: translateX(20%);
     }
     to {
         transform: translateX(0);
@@ -226,7 +227,7 @@ div {
 @keyframes slideUp {
     from {
         opacity: 0;
-        transform: translateY(100%);
+        transform: translateY(20%);
     }
     to {
         transform: translateY(0);
@@ -236,7 +237,7 @@ div {
 @keyframes slideDown {
     from {
         opacity: 0;
-        transform: translateY(-100%);
+        transform: translateY(-20%);
     }
     to {
         transform: translateY(0);

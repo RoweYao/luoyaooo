@@ -12,3 +12,7 @@ html {
     width: 100vw;
     font-family: "Microscoft YaHei", sans-serif;
 }
+ul,
+li {
+    list-style: none;
+}
