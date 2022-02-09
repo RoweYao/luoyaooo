@@ -10,8 +10,10 @@ const DEFAULT_COLOR = "rgba(0, 152, 255, 0.78)";
  */
 function clickRipple(event, color, duration) {
     console.log(event, color);
-    const el = event.toElement;
-    // const target = event.target
+    let el = event.toElement;
+    if (!el) {
+        el = event.target;
+    }
     const top = event.layerY || event.offsetY;
     const left = event.layerX || event.offsetX;
 
