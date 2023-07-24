@@ -1,0 +1,88 @@
+.demo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    filter: blur(3px) contrast(10);
+}
+.ghost-wrap {
+    position: relative;
+    width: 70px;
+    height: 86px;
+    background-color: #fff;
+    border-radius: 35px 35px 0 0;
+}
+.ghost-eyes {
+    position: absolute;
+    top: 30px;
+    width: 15px;
+    height: 20px;
+    background-color: #000;
+}
+.ghost-eyes.ghost-eyes_left {
+    left: 10px;
+    border-radius: 100% 80% 50% 50%;
+}
+.ghost-eyes.ghost-eyes_right {
+    right: 10px;
+    border-radius: 80% 100% 50% 50%;
+}
+.ghost-mouth {
+    position: absolute;
+    top: 56px;
+    left: 50%;
+    width: 20px;
+    height: 10px;
+    background-color: #000;
+    transform: translateX(-50%);
+}
+.ghost-mouth::after {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 80%;
+    height: 2px;
+    border-radius: 200%;
+    background-color: #fff;
+    content: "";
+    transform: translate(-50%, 3px);
+}
+.ghost-foot-wrap {
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 14px;
+    overflow: hidden;
+}
+.ghost-foot {
+    position: absolute;
+    left: 0px;
+    width: 14px;
+    height: 14px;
+    border-radius: 14px;
+    background-color: #fff;
+    animation: silde 0.8s linear infinite;
+}
+.ghost-foot:nth-child(2) {
+    left: 15px;
+}
+.ghost-foot:nth-child(3) {
+    left: 30px;
+}
+.ghost-foot:nth-child(4) {
+    left: 45px;
+}
+.ghost-foot:nth-child(5) {
+    left: 60px;
+}
+.ghost-foot:nth-child(6) {
+    left: 75px;
+}
+@keyframes silde {
+    100% {
+        transform: translateX(-16px);
+    }
+}

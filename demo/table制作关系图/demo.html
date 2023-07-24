@@ -1,0 +1,278 @@
+<!--
+ * @Author: luoyaooo
+ * @Date: 2022-02-18 14:21:36
+ * @LastEditors: luoyaooo
+ * @LastEditTime: 2022-02-23 15:38:52
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>table制作关系图</title>
+        <script src="../../common/vue.js"></script>
+        <link rel="stylesheet" href="../../common/reset.css" />
+        <link rel="stylesheet" href="style.css" />
+        <link
+            rel="stylesheet"
+            href="https://at.alicdn.com/t/font_1878119_qly567joxlo.css"
+        />
+    </head>
+    <body>
+        <main class="demo-container" id="app">
+            <div class="mm-diagram-wrap" ref="mmDiagramWrapHook">
+                <template v-for="(line,index) in lines">
+                    <div
+                        :key="index"
+                        class="mm-line"
+                        :class="{'active': linesActive === index}"
+                        :style="line.lineStyle"
+                        @click="clickLine(index)"
+                    >
+                        <div
+                            class="mm-line-point mm-line-point_start"
+                            :class="{'mm-line-point_bg':line.point1.text, 'mm-line-point-type_quote': line.nodeData.logicType === 'Quote'}"
+                        >
+                            <span
+                                class="mm-line-point-text"
+                                v-if="line.point1.text"
+                                >{{line.point1.text ? line.point1.text :
+                                ''}}</span
+                            >
+                            <i
+                                v-if="line.point1.isEnd"
+                                class="iconfont mm-line-point-arrow"
+                                :class="{'icon-xiangshang_xian' : line.point1.isEnd}"
+                            ></i>
+                            <div
+                                v-if="line.point1.subText"
+                                class="mm-line-point-subtext"
+                            >
+                                {{line.point1.subText}}
+                            </div>
+                            <i
+                                v-if="line.point1.text && index === linesActive"
+                                class="iconfont icon-shanchuguanxi mm-line-close"
+                                @click.stop
+                            ></i>
+                        </div>
+                        <div
+                            class="mm-line-point mm-line-point_end"
+                            :class="{'mm-line-point_bg':line.point2.text,'mm-line-point-type_quote': line.nodeData.logicType === 'Quote'}"
+                        >
+                            <span
+                                class="mm-line-point-text"
+                                v-if="line.point2.text"
+                                >{{line.point2.text ? line.point2.text :
+                                ''}}</span
+                            >
+                            <i
+                                v-if="line.point2.isEnd"
+                                class="iconfont mm-line-point-arrow"
+                                :class="{'icon-xiangxia_xian' : line.point2.isEnd}"
+                            ></i>
+                            <i
+                                v-if="line.point2.text && index === linesActive"
+                                class="iconfont icon-shanchuguanxi mm-line-close"
+                                @click.stop
+                            ></i>
+                        </div>
+                    </div>
+                </template>
+                <table
+                    class="mm-diagram-container"
+                    border="0"
+                    cellpadding="0"
+                    cellspacing="0"
+                >
+                    <tbody>
+                        <tr class="mm-root" v-for="item in data">
+                            <td>
+                                <table
+                                    border="0"
+                                    cellpadding="0"
+                                    cellspacing="0"
+                                >
+                                    <tr
+                                        class="mm-root-horizontal mm-horizontal-line_wrap"
+                                    >
+                                        <td class="mm-root-name mm-name">
+                                            <div class="mm-name-wrap">
+                                                {{item.name}}
+                                            </div>
+                                        </td>
+                                        <td class="">
+                                            <div
+                                                class="mm-fold"
+                                                v-if="item.type === 'root'"
+                                                @click="clickFold(item)"
+                                            >
+                                                <i
+                                                    class="iconfont"
+                                                    :class="[item.fold ? 'icon-spread' : 'icon-fold']"
+                                                ></i>
+                                            </div>
+                                            <div
+                                                class="mm-horizontal-line"
+                                                :style="horizontalStyle"
+                                            ></div>
+                                        </td>
+                                        <!-- 节点 -->
+                                        <td
+                                            class="mm-node-item mm-node-start"
+                                        ></td>
+                                        <td
+                                            v-for="n in item.nodeList"
+                                            class="mm-node-item"
+                                        >
+                                            <div
+                                                class="mm-node-item-name"
+                                                v-if="n.logicTypeShowName"
+                                                :data-anchor="item.fold"
+                                                :data-end="n.isEnd"
+                                                :ref="n.id"
+                                            ></div>
+                                        </td>
+                                        <!-- 节点 -->
+                                        <td
+                                            class="mm-node-item mm-node-end"
+                                        ></td>
+                                    </tr>
+                                    <template
+                                        v-for="(parent,index) in item.parent"
+                                    >
+                                        <tr
+                                            v-show="!item.fold"
+                                            class="mm-children-wrap"
+                                            :key="index"
+                                        >
+                                            <td
+                                                :colspan="parent.nodeList.length + 4"
+                                            >
+                                                <table
+                                                    border="0"
+                                                    cellpadding="0"
+                                                    cellspacing="0"
+                                                >
+                                                    <tr
+                                                        class="mm-child-wrap mm-horizontal-line_wrap"
+                                                    >
+                                                        <td
+                                                            class="mm-child-name mm-name"
+                                                        >
+                                                            <div
+                                                                class="mm-name-wrap"
+                                                            >
+                                                                {{parent.name}}
+                                                            </div>
+                                                        </td>
+                                                        <td class="">
+                                                            <div
+                                                                class="mm-fold"
+                                                                v-if="parent.type === 'parent'"
+                                                                @click="clickFold(parent)"
+                                                            >
+                                                                <i
+                                                                    class="iconfont"
+                                                                    :class="[parent.fold ? 'icon-spread' : 'icon-fold']"
+                                                                ></i>
+                                                            </div>
+                                                            <div
+                                                                class="mm-horizontal-line"
+                                                                :style="horizontalStyle"
+                                                            ></div>
+                                                        </td>
+                                                        <!-- 节点 -->
+                                                        <td
+                                                            class="mm-node-item mm-node-start"
+                                                        ></td>
+                                                        <td
+                                                            v-for="n in parent.nodeList"
+                                                            class="mm-node-item"
+                                                        >
+                                                            <div
+                                                                class="mm-node-item-name"
+                                                                v-if="n.logicTypeShowName"
+                                                                :data-anchor="parent.fold && !item.fold"
+                                                                :data-end="n.isEnd"
+                                                                :ref="n.id"
+                                                            ></div>
+                                                        </td>
+                                                        <td
+                                                            class="mm-node-item mm-node-end"
+                                                        ></td>
+
+                                                        <!-- 节点 -->
+                                                    </tr>
+                                                    <template
+                                                        v-for="(child,index) in parent.children"
+                                                    >
+                                                        <tr
+                                                            class="mm-horizontal-line_wrap"
+                                                            v-show="!parent.fold"
+                                                            :key="index"
+                                                        >
+                                                            <td
+                                                                class="mm-last-name mm-name"
+                                                                @click="nameClick(child)"
+                                                                :class="{'highlight': child.highlight}"
+                                                            >
+                                                                <div
+                                                                    class="mm-name-wrap"
+                                                                >
+                                                                    {{child.name}}
+                                                                </div>
+                                                            </td>
+
+                                                            <td class="">
+                                                                <div
+                                                                    class="mm-add"
+                                                                >
+                                                                    <i
+                                                                        class="iconfont icon-xinzeng_yuan"
+                                                                    ></i>
+                                                                </div>
+                                                                <div
+                                                                    class="mm-horizontal-line mm-horizontal-line_dashed"
+                                                                    :style="horizontalStyle"
+                                                                ></div>
+                                                            </td>
+                                                            <!-- 节点 -->
+                                                            <td
+                                                                class="mm-node-item mm-node-start"
+                                                            ></td>
+                                                            <td
+                                                                v-for="n in child.nodeList"
+                                                                class="mm-node-item"
+                                                                :class="{'mm-node-item-line_start': n.isStart,'mm-node-item-line_end': n.isEnd}"
+                                                            >
+                                                                <div
+                                                                    class="mm-node-item-name"
+                                                                    v-if="n.logicTypeShowName"
+                                                                    :data-anchor="!parent.fold && !item.fold"
+                                                                    :data-end="n.isEnd"
+                                                                    :ref="n.id"
+                                                                ></div>
+                                                            </td>
+                                                            <td
+                                                                class="mm-node-item mm-node-end"
+                                                            ></td>
+                                                            <!-- 节点 -->
+                                                        </tr>
+                                                    </template>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </template>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+        <script src="./data.js"></script>
+        <script src="./index.js"></script>
+    </body>
+</html>
