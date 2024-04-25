@@ -1,0 +1,46 @@
+<!--
+ * @Author: luoyaooo
+ * @Date: 2024-04-15 16:59:57
+ * @LastEditors: luoyaooo
+ * @LastEditTime: 2024-04-25 17:11:35
+-->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../../common/reset.css" />
+		<link rel="stylesheet" href="./style.css" />
+		<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+		<title>网站首页整屏滚动</title>
+	</head>
+	<body>
+		<main class="container" id="app">
+			<div class="scroll" @wheel="wheel" :style="scrollStyle">
+				<div class="page page1" :class="{ active: pageNum === 0 }">
+					<div class="demo1"></div>
+					<div class="demo2"></div>
+				</div>
+				<div class="page page2" :class="{ active: pageNum === 1 }">
+					<div class="demo1">第二页啦</div>
+				</div>
+				<div class="page page3" :class="{ active: pageNum === 2 }">
+					<div class="letter">
+						<div class="letter-paper">
+							<p>这是一封信，谢谢您的观看。</p>
+						</div>
+						<div class="letter-left"></div>
+						<div class="letter-right"></div>
+						<div class="letter-bottom"></div>
+						<div class="letter-switch"></div>
+					</div>
+				</div>
+				<div class="page page4" :class="{ active: pageNum === 3 }">
+					<div class="demo1"></div>
+				</div>
+				<div class="footer">到底啦。</div>
+			</div>
+		</main>
+		<script src="index.js"></script>
+	</body>
+</html>
